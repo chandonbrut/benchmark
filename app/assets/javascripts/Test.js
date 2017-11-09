@@ -15,7 +15,7 @@ function fireTest(sequenceNumber) {
         statusDiv.innerHTML = 'Request #' + window.currentTest;
 
         $.ajax({
-                url: '/test',
+                url: './test',
                 data: JSON.stringify(testData),
                 dataType: 'json',
                 type: 'POST',
@@ -63,7 +63,7 @@ function completeTesting() {
     console.log(resultData);
 
     $.ajax({
-        url: '/result',
+        url: './result',
         data: JSON.stringify(resultData),
         dataType: 'json',
         type: 'POST',

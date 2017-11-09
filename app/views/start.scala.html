@@ -1,0 +1,19 @@
+@(testId:String)
+@main("Benchmark") {
+    <script src='@routes.Assets.versioned("javascripts/Test.js")'></script>
+
+    <h1>Teste ID => @testId</h1>
+
+
+    <div id="statusDiv">
+
+    </div>
+
+    <script>
+        window.currentTestId = "@testId";
+        startTesting();
+    </script>
+
+
+
+}

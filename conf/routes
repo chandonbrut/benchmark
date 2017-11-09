@@ -1,0 +1,23 @@
+# REST Services
++nocsrf
+GET /newId                  controllers.BenchmarkController.generateTestId
+
++nocsrf
+POST /test                  controllers.BenchmarkController.markAndReturn
+
++nocsrf
+POST /result                controllers.BenchmarkController.postResults
+
++nocsrf
+POST /result/load           controllers.BenchmarkController.loadFromJson
+
++nocsrf
+GET     /results            controllers.BenchmarkController.findAllResults
+
++nocsrf
+GET  /test/:id             controllers.BenchmarkController.viewResults(id:String)
++nocsrf
+GET  /tests                 controllers.BenchmarkController.viewTests
+
+GET     /assets/*file       controllers.Assets.versioned(path="/public", file: Asset)
+GET   /                     controllers.BenchmarkController.start

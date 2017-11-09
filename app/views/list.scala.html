@@ -1,0 +1,45 @@
+@(results:List[TestResult])
+@main("Results") {
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <td>Id</td>
+            <td>Data/Hora</td>
+            <td>Tempo Médio</td>
+            <td>Requests</td>
+            <td>Sucessos</td>
+            <td>Falhas</td>
+        </tr>
+        </thead>
+        <tbody>
+        @for(result <- results) {
+        <tr>
+            <td>
+                @{
+                    result.testId
+                 // <a class="btn btn-sm btn-primary" href='@routes.BenchmarkController.viewResults(result.testId)'>Ver</a>
+                 }
+            </td>
+            <td>
+                @{result.timestamp}
+            </td>
+            <td>
+                @{result.accumulatedTime/ result.numberOfRequests}
+            </td>
+            <td>
+                @result.numberOfRequests
+            </td>
+            <td>
+                @result.success
+            </td>
+            <td>
+                @result.failures
+            </td>
+        </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+}

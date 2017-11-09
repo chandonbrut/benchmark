@@ -1,0 +1,41 @@
+@(title: String)(content: Html)
+<html>
+<head>
+    <title>@title</title>
+    <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("stylesheets/main.css")'>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+    <!-- Bootstrap -->
+    <link href='@routes.Assets.versioned("bootstrap-3.3.6-dist/css/bootstrap.min.css")' rel="stylesheet">
+    <link href='@routes.Assets.versioned("bootstrap-3.3.6-dist/css/bootstrap-theme.min.css")' rel="stylesheet">
+</head>
+<body>
+
+<nav id="benchmark-navbar" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div id="toolbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href='@routes.BenchmarkController.start()'>Iniciar Teste</a></li>
+                <li><a href='@routes.BenchmarkController.findAllResults()'>Listar Testes</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="benchmark-main"  class="container-fluid">
+    <div class="main">
+        @content
+    </div>
+</div>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src='@routes.Assets.versioned("bootstrap-3.3.6-dist/js/bootstrap.min.js")'></script>
+
+</body>
+</html>

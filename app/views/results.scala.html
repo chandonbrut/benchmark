@@ -1,0 +1,8 @@
+@(result:TestResult)
+@main("Results") {
+            @{result.timestamp}
+            @{result.accumulatedTime/ result.numberOfRequests}
+            @result.numberOfRequests
+            @result.success
+            @result.failures
+}
